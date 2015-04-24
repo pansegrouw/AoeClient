@@ -1,0 +1,31 @@
+ee47ceab775c0756e935b13b1f7ddbcb,CMSELE,NSW,AOE
+123 Here Street
+SALISBURY
+QLD
+4107
+456 There Street
+PARRAMATTA
+NSW
+2150
+Senders R Us
+Mr. Sender;
+07 1324 5678
+P
+1
+Receivers R Us
+Mrs Reciever
+02 9876 5432
+D
+2
+true
+50
+50
+50
+0.125
+20
+1
+CONREF001
+2014-11-25 13:15:00
+Sending something special
+R
+Mr. Sender

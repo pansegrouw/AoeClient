@@ -1,0 +1,31 @@
+0  [account details]		123456789123456789,TEST,NSW,AOE  
+1  [pickup address 1]		123 Here Street
+2  [pickup suburb]			SALISBURY
+3  [pickup state]			QLD
+4  [pickup post code]		4107
+5  [delivery address 1]		456 There Street
+6  [delivery suburb]		PARRAMATTA
+7  [delivery state]			NSW
+8  [delivery post code]		2150
+9  [pickupStop comp name]	Senders R Us
+10 [pickupStop contact]		Mr. Sender
+11 [pickupStop phone num]	07 1324 5678
+12 [pickupStop type]		P
+13 [pickupStop number]		1
+14 [deliveryStop comp name]	Receivers R Us
+15 [deliveryStop contact]	Mrs Reciever
+16 [deliveryStop phone num]	02 9876 5432
+17 [deliveryStop type]		D
+18 [deliveryStop number]	2
+19 [jobItem dangerous]		false/true
+20 [jobItem length]			50
+21 [jobItem width]			50
+22 [jobItem height]			50
+23 [jobItem volume]			0.125
+24 [jobItem weight]			20
+25 [jobItem item count]		1
+26 [reference number]		CONREF001
+27 [readyDate]				yyyy-MM-dd HH:mm:ss
+28 [instruction]			Sending something special
+29 [service level]			R
+30 [booked by]				Mr. Sender
