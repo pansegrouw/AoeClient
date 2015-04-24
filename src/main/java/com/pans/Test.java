@@ -29,7 +29,6 @@ public class Test {
     public static void main(String[] args) throws IOException, DatatypeConfigurationException, ParseException {
         
         
-        
         Logger logger = LoggerFactory.getLogger(Test.class);
         
         logger.info("hallo");

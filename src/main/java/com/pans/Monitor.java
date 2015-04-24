@@ -28,6 +28,7 @@ public class Monitor implements Runnable {
     
     public void run() {
 
+        
         File inputFolder = new File(props.getProperty("monitor.location"));
         File processedFolder = new File(props.getProperty("processed.location"));
         File resultFolder = new File(props.getProperty("result.location"));
@@ -37,8 +38,9 @@ public class Monitor implements Runnable {
         if (!resultFolder.exists()) {
             resultFolder.mkdirs();
         }
+        LOG.info("checking [{}]" , inputFolder);
         File[] listOfFiles = inputFolder.listFiles();
-
+        LOG.debug("[{}] files found to process" , listOfFiles.length);
         for (int i = 0; i < listOfFiles.length; i++) {
             if (listOfFiles[i].isFile()) {
                 String resultFileName = props.getProperty("result.location") + "/" + listOfFiles[i].getName();

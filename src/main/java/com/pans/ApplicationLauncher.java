@@ -30,10 +30,10 @@ public class ApplicationLauncher {
      * @throws FileNotFoundException 
      */
     public static void main(String[] args) throws FileNotFoundException, IOException {
-        
-        System.setProperty(org.slf4j.impl.SimpleLogger.DEFAULT_LOG_LEVEL_KEY, "DEBUG");
-        System.setProperty(org.slf4j.impl.SimpleLogger.LOG_FILE_KEY, "aoe.app.log");
-        
+//        
+//        System.setProperty(org.slf4j.impl.SimpleLogger.DEFAULT_LOG_LEVEL_KEY, "DEBUG");
+//        System.setProperty(org.slf4j.impl.SimpleLogger.LOG_FILE_KEY, "aoe.app.log");
+//        
         Logger logger = LoggerFactory.getLogger(ApplicationLauncher.class);
         
         if(args == null || args.length ==0) {
