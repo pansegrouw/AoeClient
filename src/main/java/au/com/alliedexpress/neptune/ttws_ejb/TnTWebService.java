@@ -1,7 +1,8 @@
 
 package au.com.alliedexpress.neptune.ttws_ejb;
 
-import java.net.MalformedURLException;
+import java.io.IOException;
+import java.net.HttpURLConnection;
 import java.net.URL;
 
 import javax.xml.namespace.QName;
@@ -15,7 +16,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.pans.ApplicationLauncher;
-import com.pans.JobReader;
 
 
 /**
@@ -40,9 +40,19 @@ public class TnTWebService
             String wsdlUrl = "http://"+ApplicationLauncher.HOST+".alliedexpress.com.au:8080/ttws-ejb/TTWS?wsdl";
             LOG.debug("using URL [{}]" ,wsdlUrl );
             url = new URL(wsdlUrl);
+            
+            LOG.info("Testing connection");
+            URL clone_url = new URL(url.toString());
+            HttpURLConnection clone_urlconnection = (HttpURLConnection) clone_url.openConnection();
+            // TimeOut settings
+            clone_urlconnection.setConnectTimeout(10000);
+            clone_urlconnection.setReadTimeout(10000);
+            clone_urlconnection.connect();
+            LOG.info("Connection is fine");
+            
             //url = new URL("http://neptune.alliedexpress.com.au:8080/ttws-ejb/TTWS?wsdl");
-        } catch (MalformedURLException ex) {
-            LOG.error(ex.getMessage() , ex);
+        } catch (IOException ex) {
+//            LOG.error(ex.getMessage() , ex);
             e = new WebServiceException(ex);
         }
         TNTWEBSERVICE_WSDL_LOCATION = url;
