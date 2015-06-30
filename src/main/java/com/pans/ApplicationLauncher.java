@@ -35,6 +35,7 @@ public class ApplicationLauncher {
 //        System.setProperty(org.slf4j.impl.SimpleLogger.LOG_FILE_KEY, "aoe.app.log");
 //        
         Logger logger = LoggerFactory.getLogger(ApplicationLauncher.class);
+        int interval = 60;
         
         if(args == null || args.length ==0) {
             logger.error("Properties file needs to be spesified");
@@ -48,18 +49,29 @@ public class ApplicationLauncher {
         props.load(new BufferedReader(new FileReader(args[0])));
 
         HOST = props.getProperty("host");
+        String timerInterval = props.getProperty("timer.interval.seconds");
+        
         
         if(HOST == null || HOST.equals("")) {
             logger.error("host property not set in properties file");
             System.exit(0);
         }
         
+        if(timerInterval != null) {
+            try {
+            interval = Integer.parseInt(timerInterval);
+            } catch(Exception ex) {
+                
+            }
+        }
+        
+        
         ScheduledExecutorService executor = Executors.newSingleThreadScheduledExecutor();
 
-        logger.info("creating task");
+        logger.info("creating task. Scheduling montor to [{}] seconds" , interval);
         Runnable task = new Monitor(props);
         logger.info("sheduling task");
-        executor.scheduleAtFixedRate(task, 5, 10, TimeUnit.SECONDS);
+        executor.scheduleAtFixedRate(task, 5, interval, TimeUnit.SECONDS);
         logger.info("done");
     }
 
